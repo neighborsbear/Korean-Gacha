@@ -112,21 +112,31 @@ $(function(){
     var r_topCount = 0
     var r_pCount = 0
     var r_nCount = 0
+    var rp_check = 0
+    var rn_check = 0
     $("#r_simulation").change(function(){
         r_topCount = 0
         r_pCount = 0
         r_nCount = 0
+        rp_check = 0
+        rn_check = 0
         
         if($("#r_top .top").val()!=""){
-            for(i=1;i<r_top;i++){
-                r_pCount += i*((100/r_unit/(r_count/p_total*p_gacha))*r_unit/100)*((1-((100/r_unit/(r_count/p_total*p_gacha))*r_unit/100))**(i-1))
+            r_pCount = 100/(((100/p_total/p_total)*p_gacha))
+            r_nCount = 100/(((100/p_total/p_total)*r_gacha))
+
+            for(i=1;i<(r_top*r_unit);i++){
+                rp_check += i*(r_pCount/100)*((1-(r_pCount/100))**(i-1))
             }
-            r_pCount += r_top * ((1-((100/r_unit/(r_count/p_total*p_gacha))*r_unit/100))**(r_top-1))
-            r_nCount = 100/(100/r_unit/(r_count/p_total*r_gacha))/r_unit
-    
-            r_topCount = r_pCount + (r_nCount-(r_nCount/r_top))
+            rp_check += (r_top*r_unit) * ((1-(r_pCount/100))**((r_top*r_unit)-1))
+            rn_check = 100/r_nCount/r_unit
+
+            r_topCount = (rp_check + (rn_check-(rn_check/r_top)))/r_unit
+
         }
         
+        $("#test1 .test .value").text(r_pCount)
+        $("#test2 .test .value").text(r_nCount)
         $("#rt_count .t_count .value").text(r_topCount)
     })
 
