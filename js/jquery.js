@@ -126,12 +126,13 @@ $(function(){
             r_nCount = 100/(((100/p_total/p_total)*r_gacha))
 
             for(i=1;i<(r_top*r_unit);i++){
-                rp_check += i*(r_pCount/100)*((1-(r_pCount/100))**(i-1))
+                rp_check += i*(p_gacha/100)*((1-(p_gacha/100))**(i-1))
             }
-            rp_check += (r_top*r_unit) * ((1-(r_pCount/100))**((r_top*r_unit)-1))
+            rp_check += (r_top*r_unit) * ((1-(p_gacha/100))**((r_top*r_unit)-1))
+            // rn_check = 100/r_nCount/r_unit
             rn_check = 100/r_nCount/r_unit
 
-            r_topCount = (rp_check + (rn_check-(rn_check/r_top)))/r_unit
+            r_topCount = (rp_check - (rn_check-(rn_check/r_top)))/r_unit
 
         }
         
