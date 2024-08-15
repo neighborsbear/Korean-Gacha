@@ -25,7 +25,7 @@ input{
     margin-right: 1%;
 }
 #default,#simulation,#r_simulation,#conversion,#r_conversion{
-    width: 49%;
+    width: 500px;
     margin-bottom: 1%;
 }
 #default input{
