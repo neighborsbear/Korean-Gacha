@@ -130,14 +130,14 @@ $(function(){
             }
             rp_check += (r_top*r_unit) * ((1-(p_gacha/100))**((r_top*r_unit)-1))
             // rn_check = 100/r_nCount/r_unit
-            rn_check = 100/r_nCount/r_unit
+            // rn_check = 100/r_nCount
 
-            r_topCount = (rp_check - (rn_check-(rn_check/r_top)))/r_unit
+            r_topCount = (rp_check - (r_gacha))/r_unit
 
         }
         
-        $("#test1 .test .value").text(r_pCount)
-        $("#test2 .test .value").text(r_nCount)
+        $("#test1 .test .value").text(rp_check)
+        $("#test2 .test .value").text(rn_check)
         $("#rt_count .t_count .value").text(r_topCount)
     })
 
