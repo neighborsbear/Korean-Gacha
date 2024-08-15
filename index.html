@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ko가챠계산기</title>
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <div class="flex">
+        <div id="default">
+            <h1>기본 단위 가치</h1>
+            <div>
+                <h4>인게임 재화</h4>
+                <input id="gold" type="number">
+            </div>
+            <div>
+                <h4>현금</h4>
+                <input id="won" type="number"><span>원</span>
+            </div>
+            <div>
+                <h4>결과</h4>
+                <div class="enter">
+                    <span>재화 1 당 가치 = </span><span class="value"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex">
+    
+            <div id="r_simulation">
+                <h1>가챠 계산기</h1>
+                <div class="flex">
+                    <div id="r_gacha">
+                        <h4>픽업 개별 확률 %</h4><span>천장 적용 O</span>
+                        <div class="p_box">
+                            <div>
+                                <input class="pick" type="number"><span>%</span>
+                            </div>
+                        </div>
+                        <div class="p_all">
+                            <span>픽업 총합 = </span><span class="value"></span>
+                        </div>
+                        <button id="p_btn">추가</button><button id="p_del">삭제</button>
+                        <h4>개별 확률 %</h4><span>천장 적용 X</span>
+                        <div class="g_box">
+                            <div>
+                                <input class="gacha" type="number"><span>%</span>
+                            </div>
+                        </div>
+                        <div class="all">
+                            <span>논픽업 총합 = </span><span class="value"></span>
+                        </div>
+                        <button id="rg_btn">추가</button><button id="rg_del">삭제</button>
+                        <div class="p_check">
+                            <span>뽑기만 총합 = </span><span class="value"></span>
+                        </div>
+                        <div class="row">
+                            <h4>연차 단위</h4>
+                            <p>단차 일경우 1 적기</p>
+                            <div>
+                                <input class="unit" type="number">
+                            </div>
+                        </div>
+                        <div class="count">
+                            <span>뽑기만 횟수 기대값 = </span><span class="value"></span>
+                        </div>
+                    </div>
+    
+                    <div id="r_top">
+                        <div class="t_box">
+                            <h4>천장횟수</h4>
+                            <div>
+                                <input class="top" type="number">
+                            </div>
+                            <button id="rtc_on">있음</button>
+                            <button id="rtc_none">없음</button>
+                        </div>
+                        <div class="gift">
+                            <h4>증정품</h4>
+                            <div>
+                                <input class="present" type="number"><span>조건 횟수</span>
+                                <br>
+                                <input class="p_count" type="number"><span>갯수</span>
+                            </div>
+                            <button id="rp_on">있음</button>
+                            <button id="rp_none">없음</button>
+                        </div>
+                    </div>
+    
+                    <div id="c_part" class="flex">
+                        <div id="rt_count">
+                            <div class="t_count">
+                                <span>천장 포함 기대값 = </span><span class="value"></span>
+                            </div>
+                        </div>
+                        <div id="rg_count">
+                            <div class="g_count">
+                                <span>증정품 포함 기대값 = </span><span class="value"></span>
+                            </div>
+                        </div>
+                        <div id="rtg_count">
+                            <div class="rtg_count">
+                                <span>천장+증정품 포함 기대값 = </span><span class="value"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="r_check">
+                        <h4>횟수당 재화</h4>
+                        <div>
+                            <input class="check" type="number">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex">
+            <div id="r_conversion">
+                <h1>가챠 가치 환산</h1>
+                <span class="onoff oot">천장 off</span> <span class="onoff oop">증정 off</span>
+                <div class="gold">
+                    <span>재화 환산 = </span><span class="value"></span>
+                </div>
+                <div class="won">
+                    <span>현금 환산 = </span><span class="value"></span>
+                </div>
+                <button class="conversion">확인</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
